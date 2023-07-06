@@ -1,0 +1,44 @@
+<div class="container-fluid">
+
+  <h3 style="text-align: center;"> RXJS DATA</h3>
+
+  <div style="text-align: center;" class="m-2">
+    <input type="text" name="search" class="search-input"[(ngModel)]="searchString" (keyup)="searchFilter($event.target)" placeholder="Search name or email"/>
+  </div>
+
+  <table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">
+                <a> NAME</a>
+            </th>
+            <th scope="col">
+                <a>Email</a>
+            </th>
+            <th scope="col">
+                <a>Gender</a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- <div *ngIf="rxjsDatas.length > 0"> -->
+            <ng-container *ngFor="let rxjs of rxjsDatas ">
+                <tr scope="row">
+                    <td>          
+                        {{ rxjs?.name }}
+                    </td>
+                    <td>                            
+                        {{ rxjs?.email }}
+                    </td>
+                    <td>                            
+                        {{ rxjs?.gender }}
+                    </td>
+                </tr>
+            </ng-container>
+        <!-- </div> -->
+        <!-- <div *ngIf="rxjsDatas.length == 0">
+            Data Not Found
+        </div> -->
+    </tbody>
+</table>
+</div>
